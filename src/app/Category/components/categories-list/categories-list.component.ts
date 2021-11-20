@@ -14,6 +14,15 @@ export class CategoriesListComponent {
   categories: CategoryDTO[];
 
   private userId: string;
+
+  displayedColumns: string[] = [
+    'id',
+    'title',
+    'description',
+    'cssColor',
+    'actions',
+  ];
+
   constructor(private router: Router, private store: Store<AppState>) {
     this.userId = '';
     this.categories = new Array<CategoryDTO>();
