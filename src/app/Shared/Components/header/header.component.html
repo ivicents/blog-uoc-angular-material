@@ -1,17 +1,69 @@
 <p>header works!</p>
 
 <!-- NO AUTH REQUIRED -->
-<div *ngIf="showNoAuthSection">
+<!-- <div *ngIf="showNoAuthSection">
   <button (click)="home()">Home</button>
   <button (click)="login()">Login</button>
   <button (click)="register()">Register</button>
-</div>
+</div> -->
 
 <!-- AUTH REQUIRED -->
-<div *ngIf="showAuthSection">
+<!-- <div *ngIf="showAuthSection">
   <button (click)="home()">Home</button>
   <button (click)="adminPosts()">Admin posts</button>
   <button (click)="adminCategories()">Admin categories</button>
   <button (click)="profile()">Profile</button>
   <button (click)="logout()">Logout</button>
+</div> -->
+
+<div style="height: 10vh;" *ngIf="showNoAuthSection"> 
+  <mat-toolbar color="primary">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a mat-button><button (click)="home()">Home</button></a>
+        <a mat-button><button (click)="login()">Login</button></a>
+        <a mat-button><button (click)="register()">Register</button></a>
+      </div>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+          <a mat-button><button (click)="home()">Home</button></a>
+          <a mat-button><button (click)="login()">Login</button></a>
+          <a mat-button><button (click)="register()">Register</button></a>
+        </div>
+      </mat-sidenav>
+    </mat-sidenav-container>
+</div>
+
+<div style="height: 10vh;" *ngIf="showAuthSection"> 
+  <mat-toolbar color="primary">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a mat-button><button (click)="home()">Home</button></a>
+        <a mat-button><button (click)="adminPosts()">Admin posts</button></a>
+        <a mat-button><button (click)="adminCategories()">Admin categories</button></a>
+        <a mat-button><button (click)="profile()">Profile</button></a>
+        <a mat-button><button (click)="logout()">Logout</button></a>
+      </div>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+          <a mat-button><button (click)="home()">Home</button></a>
+          <a mat-button><button (click)="adminPosts()">Admin posts</button></a>
+          <a mat-button><button (click)="adminCategories()">Admin categories</button></a>
+          <a mat-button><button (click)="profile()">Profile</button></a>
+          <a mat-button><button (click)="logout()">Logout</button></a>
+        </div>
+      </mat-sidenav>
+    </mat-sidenav-container>
 </div>
