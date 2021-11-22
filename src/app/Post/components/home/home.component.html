@@ -1,6 +1,7 @@
 <p>List All posts</p>
 
-<div style="text-align: center" [@fadeInOut]>
+<!-- <div style="text-align: center" [@fadeInOut]> -->
+  <div style="text-align: center" [@listAnimation]="posts.length">
   <div *ngFor="let post of posts">
     <mat-card>
 
